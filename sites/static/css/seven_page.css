@@ -1,14 +1,12 @@
 h3.title{
 	font-weight: bold;
 	max-width: 55%;
-	margin-top: 50px;
 }
 p{
 	font-weight: 400;
 }
 p.text-title{
 	max-width: 60%;
-	margin: 30px 0 30px 0;
 }
 div.all-content{
 	width: 100%;
@@ -17,7 +15,7 @@ div.all-content img.img{
 	width: 100%;
 }
 h5.rules{
-	margin: 40px 0 20px 0;
+	margin: 50px 0 30px 0;
 	font-weight: bold;
 }
 h5.we{
@@ -32,25 +30,19 @@ ul.uli{
 li.ili{
 	color: #666;
 	font-weight: 400;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 div.d{
 	margin-bottom: 50px;
 }
-h6.title{
-	font-weight: bold;
-	margin-top: 90px;
-}
+
 p.subtitle{
 	max-width: 60%;
 	font-weight: 400;
 	margin-top: 30px;
 	color: #444;
 }
-h4.title{
-	font-weight: bold;
-	margin-bottom: 80px;
-}
+
 
 div.all-href{
 	max-width: 60%;

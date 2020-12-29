@@ -3,6 +3,7 @@ div.all-content{
 }
 h4.title{
 	font-weight: bold;
+	padding: 0;
 }
 h2.title{
 	font-weight: bold;
@@ -10,14 +11,12 @@ h2.title{
 }
 p.subtitle{
 	max-width: 60%;
-	margin-top: 40px;
 }
 div.img{
 	width: 100%;
 } 
 img.img{
 	width: 100%;
-	margin-top: 30px;
 }
 p{
 	font-weight: 400;
@@ -42,7 +41,7 @@ div.three-img{
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	margin-top: 70px;
+	margin-top: 50px;
 }
 div.img3{
 	width: 31%;
@@ -52,22 +51,21 @@ div.img3 img.img{
 }
 p.text-s{
 	width: 60%;
-	margin-top: 60px;
+	margin-top: 50px;
+	margin-bottom: 0;
 }
 
 h5.title{
 	width: 50%;
 	color: #444;
-	font-weight: bold;
-	margin-top: 70px;
 }
 p.t{
 	max-width: 50%;
+	margin-bottom: 0;
 }
 
 div.cardd{
 	width: 31%;
-	margin-top: 40px;
 }
 div.cardd a img.img{
 	width: 100%;

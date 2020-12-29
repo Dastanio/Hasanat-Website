@@ -8,13 +8,15 @@
   <!-- CSS only -->
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+<script type='text/javascript' src='/js/jquery.mousewheel.min.js'></script>
 </head>
 
 
 <div class="wrapper">
 <section >
-   <div class="title"><h3 class="title">Оборудование для очистки и перекачки сточных вод</h3>  </div>
-   <div class="img"><img class="img" src="{% static 'img/slider.jpg' %}" style="height: 70vh;">
+   
+   <div class="img"><img class="img" src="{% static 'img/slider.jpg' %}" style="max-height: 800px;">
 
  </section>
 
@@ -36,11 +38,15 @@
       </div>
     </div>
       <div class="all-text-block">
-        <h3 class="title-rasp">Распродажа в ИКЕА</h3>
-        <p class="sub-title-rasp">В этом году мы провели дома больше времени чем обычно. И узнали, что он может превращаться в фитнес-зал, офис, ресторан, детскую площадку и много во что еще. Распродажа в ИКЕА — отличная возможность поблагодарить дом за все, что он для нас сделал. До 20 января покупайте товары для обновления дома по самым выгодным ценам.</p>
-          <a role="button" class="pub__btn pub__btn--primary pub__btn2" href="#">
+        <h3 class="title-rasp">О компании</h3>
+        <p class="sub-title-rasp">
+
+ТОО «Hasanat group» является ведущим производителем оборудования в сфере очистки и перекачки сточных вод. Мы выполняем весь комплекс работ от аудита очистных сооружений до их строительства и пусконаладки.<br><br>
+
+После получения информации от клиента, мы объединяем все возможные перспективы развития и структурируем информацию относящуюся к задаче, региону или контексту и предоставляем устойчивую инфраструктуру, которая позволит стабильно управлять водными ресурсами любого масштаба.</p>
+          <a role="button" class="pub__btn pub__btn--primary pub__btn2" href="{% url 'about_company' %}">
             <span class="pub__btn__inner pub__btn__inner--primary pub__btn--small"><span class="pub__btn__copy">
-              <span class="pub__btn__label">Оставить заявку</span>
+              <span class="pub__btn__label">Подробнее</span>
             </span>
           </span>
           </a>
@@ -59,31 +65,32 @@
 <div class="wrappersss">
 
 <!-- BLOCK -->
+{% for new in news %}
 <div class="pub__carousel-slide ifp6bjs">
   <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
+    <div class="range-revamp-product-compact">
 
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
+  <a href="{% url 'new_news_detail' new.id %}" aria-label="{{new.title}}">
 
     <div class="range-revamp-product-compact__image-wrapper">
       <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
+        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="{{new.title}}" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{{new.img.url}}"  data-src="false" data-src-set="false"></div>
 
         <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
+          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{{new.img_2.url}}">
         </div>
       </div>
     </a>
 
 
     <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
+      <a href="{% url 'new_news_detail' new.id %}">
         <div class="range-revamp-compact-price-package">
           <div class="range-revamp-compact-price-package__additional-info">
             <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
+              <div class="range-revamp-header-section__title--small">{{new.title}}</div>
               <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
+                <span class="range-revamp-header-section__description-text">{{new.sub_title|truncatechars:200}}</span>
               </div>
             </div>
           </div>
@@ -96,226 +103,12 @@
   </div>
 </div>
 </div>
-
+{% endfor %}
 
 <!-- BLOCK -->
 
   
-<!-- BLOCK -->
-<div class="pub__carousel-slide ifp6bjs">
-  <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
 
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
-    <div class="range-revamp-product-compact__image-wrapper">
-      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
-        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
-        </div>
-      </div>
-    </a>
-
-
-    <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
-        <div class="range-revamp-compact-price-package">
-          <div class="range-revamp-compact-price-package__additional-info">
-            <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
-              <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </a>
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-<!-- BLOCK -->
-
-
-  
-<!-- BLOCK -->
-<div class="pub__carousel-slide ifp6bjs">
-  <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
-
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
-    <div class="range-revamp-product-compact__image-wrapper">
-      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
-        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
-        </div>
-      </div>
-    </a>
-
-
-    <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
-        <div class="range-revamp-compact-price-package">
-          <div class="range-revamp-compact-price-package__additional-info">
-            <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
-              <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </a>
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-<!-- BLOCK -->
-
-
-  
-<!-- BLOCK -->
-<div class="pub__carousel-slide ifp6bjs">
-  <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
-
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
-    <div class="range-revamp-product-compact__image-wrapper">
-      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
-        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
-        </div>
-      </div>
-    </a>
-
-
-    <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
-        <div class="range-revamp-compact-price-package">
-          <div class="range-revamp-compact-price-package__additional-info">
-            <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
-              <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </a>
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-<!-- BLOCK -->
-
-  
-<!-- BLOCK -->
-<div class="pub__carousel-slide ifp6bjs">
-  <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
-
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
-    <div class="range-revamp-product-compact__image-wrapper">
-      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
-        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
-        </div>
-      </div>
-    </a>
-
-
-    <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
-        <div class="range-revamp-compact-price-package">
-          <div class="range-revamp-compact-price-package__additional-info">
-            <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
-              <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </a>
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-<!-- BLOCK -->
-
-  
-<!-- BLOCK -->
-<div class="pub__carousel-slide ifp6bjs">
-  <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
-
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
-    <div class="range-revamp-product-compact__image-wrapper">
-      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
-        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
-        </div>
-      </div>
-    </a>
-
-
-    <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
-        <div class="range-revamp-compact-price-package">
-          <div class="range-revamp-compact-price-package__additional-info">
-            <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
-              <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </a>
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-<!-- BLOCK -->
 </div>
 
 
@@ -328,7 +121,7 @@
 .pub__designSystemBase button::-moz-focus-inner,.pub__designSystemBase [type="button"]::-moz-focus-inner{border-style:none;padding:0;}
 .pub__designSystemBase button:-moz-focusring,.pub__designSystemBase [type="button"]:-moz-focusring{outline:1px dotted ButtonText;}
 .pub__designSystemBase *,.pub__designSystemBase *::before,.pub__designSystemBase *::after{box-sizing:inherit;outline:none;}
-.pub__carousel-slide{max-width:100%;position:relative;flex-shrink:0;margin-left:.625rem;margin-right:.625rem;}
+.pub__carousel-slide{max-width:100%;position:relative;flex-shrink:0;margin-left:0;margin-right:1.25rem; margin-bottom: 20px;}
 .ifp6bjs{flex-basis:calc(75% - 1.25rem);flex-shrink:0;}
 @media (min-width:37.5em){
 .ifp6bjs{flex-basis:calc(33.33% - 1.25rem);}
@@ -362,14 +155,15 @@
 .range-revamp-btn__inner--icon-emphasised:hover{background-color:#004f93;color:#fff;}
 .range-revamp-btn__inner--icon-emphasised:active{background-color:#003e72;color:#fff;}
 .range-revamp-btn__inner--icon-emphasised:disabled{background:#dfdfdf;color:#929292;cursor:default;}
-.range-revamp-btn--small{height:2.5rem;padding:0 1.5rem;font-size:.75rem;line-height:1.33333;}
+.range-revamp-btn--small{height:2.5rem;padding:0 1.5rem;font-size:18px;line-height:1.33333;}
 .range-revamp-btn:disabled>.range-revamp-btn__inner{background:#dfdfdf;color:#929292;cursor:default;}
-.range-revamp-header-section__title--small{font-weight:700;text-transform:uppercase;color:#000;line-height:1.5;margin-bottom:.3125rem;}
-.range-revamp-header-section__title--small{font-size:.75rem;}
-.range-revamp-header-section__description{letter-spacing:0;font-weight:400;font-size:.75rem;line-height:1.5;color:#484848;}
+.range-revamp-header-section__title--small{font-weight:bold;color:#111;line-height:1.5;margin-bottom:.3125rem;}
+.range-revamp-header-section__title--small{font-size:18px;}
+.range-revamp-header-section__description{letter-spacing:0;font-weight:400;font-size:16px;color:#363435;}
 .range-revamp-header-section__description-text:after{content:" ";}
 @media (min-width:37.5em){
-.range-revamp-header-section__description,.range-revamp-header-section__title--small{font-size:.875rem;line-height:1.42857;}
+.range-revamp-header-section__title--small{font-size:18px;}
+.range-revamp-header-section__description{font-size: 16px;}
 }
 .range-revamp-price{display:inline-block;font-weight:700;color:#000;font-size:1rem;white-space:pre;}
 .range-revamp-price__integer{line-height:1.1875;font-size:1.375rem;vertical-align:inherit;}
@@ -418,10 +212,22 @@ body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-bu
   overflow-x: scroll;
   display: flex;
   scrollbar-color: #458245 #714826;
-  margin-left: -10px;
-  margin-right: -10px;
+
 }
 </style>
+<script type="text/javascript">
+  $(function() {
+
+   $(".wrappersss").mousewheel(function(event, delta) {
+
+      this.scrollLeft -= (delta * 30);
+    
+      event.preventDefault();
+
+   });
+
+});
+</script>
  
 
 <div class="wrapper-fluid">
@@ -435,10 +241,10 @@ body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-bu
             <img src="{% static 'img/bblock.jpg' %}" alt="" class="img">
             <div class="all-text">
                 <div class="title">
-                    <h3 class="title">Биологическая очистка хозяйственных и бытовых сточных вод</h3>
+                    <h3 class="title">Биологическая очистка <br> хозяйственных и бытовых сточных вод</h3>
                 </div>
                
-                <a href="#!" class="black-text d-flex justify-content-start mb-5" style="margin-top: 50px; padding-bottom: 30px; margin-left: 32px;">
+                <a href="#!" class="black-text d-flex justify-content-start mb-5" style="margin-top: -20px; padding-bottom: 30px; margin-left: 48px;">
                     <span class="pub__btn__inner pub__btn__inner--icon-primary-inverse"><span class="pub__btn__copy"><svg focusable="false" viewBox="0 0 24 24" class="pub__svg-icon pub__btn__icon" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.2937 12.7074L20.0008 12.0003L19.2938 11.2932L12.0008 3.99927L10.5865 5.41339L16.1727 11.0003H4V13.0003H16.1723L10.5855 18.5868L11.9996 20.0011L19.2937 12.7074Z"></path></svg></span></span>
 
                 </a>
@@ -449,10 +255,10 @@ body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-bu
             <img src="{% static 'img/bblock.jpg' %}" alt="" class="img">
             <div class="all-text">
                 <div class="title">
-                    <h3 class="title">Сооружения для очистки поверхностных сточных вод</h3>
+                    <h3 class="title">Сооружения для очистки <br> поверхностных сточных вод</h3>
                 </div>
                 
-                <a href="#!" class="black-text d-flex justify-content-start mb-5" style="margin-top: 50px; padding-bottom: 30px;  margin-left: 32px;">
+                <a href="#!" class="black-text d-flex justify-content-start mb-5" style="margin-top: -20px; padding-bottom: 30px;  margin-left: 48px;">
                     <span class="pub__btn__inner pub__btn__inner--icon-primary-inverse"><span class="pub__btn__copy"><svg focusable="false" viewBox="0 0 24 24" class="pub__svg-icon pub__btn__icon" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.2937 12.7074L20.0008 12.0003L19.2938 11.2932L12.0008 3.99927L10.5865 5.41339L16.1727 11.0003H4V13.0003H16.1723L10.5855 18.5868L11.9996 20.0011L19.2937 12.7074Z"></path></svg></span></span>
 
                 </a>
@@ -464,10 +270,10 @@ body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-bu
             <img src="{% static 'img/bblock.jpg' %}" alt="" class="img">
                <div class="all-text">
                 <div class="title">
-                    <h3 class="title">Очистные сооружения промышленных сточных вод</h3>
+                    <h3 class="title">Очистные сооружения <br>промышленных сточных вод</h3>
                 </div>
                 
-                <a href="#!" class="black-text d-flex justify-content-start  mb-5" style="margin-top: 50px; padding-bottom: 30px;  margin-left: 32px;">
+                <a href="#!" class="black-text d-flex justify-content-start  mb-5" style="margin-top: -20px; padding-bottom: 30px;  margin-left: 48px;">
                     <span class="pub__btn__inner pub__btn__inner--icon-primary-inverse"><span class="pub__btn__copy"><svg focusable="false" viewBox="0 0 24 24" class="pub__svg-icon pub__btn__icon" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.2937 12.7074L20.0008 12.0003L19.2938 11.2932L12.0008 3.99927L10.5865 5.41339L16.1727 11.0003H4V13.0003H16.1723L10.5855 18.5868L11.9996 20.0011L19.2937 12.7074Z"></path></svg></span></span>
 
                 </a>
@@ -492,9 +298,9 @@ body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-bu
       </div>
       <div class="b1lvk80c c66rnvm f1q5w654 g16gpiby g1947clq i194i22z sgwdtfk" style="background-color:#F5F5F5">
         <div class="g1ci6p1l v1y1f4kj v18by0fb">
-          <h2 class="g1xk08ng pub__h2 s1gshh7t">Закажите КОС и получите КНС бесплатно </h2>
+          <h2 class="g1xk08ng pub__h2 s1gshh7t">Закажите КОС, получите КНС бесплатно </h2>
           <div class="g1ci6p1l vfh8y1x v18by0fb">
-            <div class="i76mo33 pub__designSystemText t91kxqv " style="color:#111111">
+            <div class="i76mo33 pub__designSystemText t91kxqv " style="color:#363435">
               <p> Комплексные очистные сооружения (КОС) – инженерные сооружения, выполняющие комплекс задач и функций по удалению загрязнений в бытовых и промышленных сточных водах перед их выпуском в водоёмы. 
                 <br>
                 <br> Закажите производство комплексного очистного сооружения и получите канализационную насосную станцию в подарок.  </p>
@@ -520,10 +326,10 @@ body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-bu
             <img src="{% static 'img/bblock.jpg' %}" alt="" class="img">
             <div class="all-text">
                 <div class="title">
-                    <h3 class="title">Биологическая очистка хозяйственных и бытовых сточных вод</h3>
+                    <h3 class="title">Канализационные насосные станции</h3>
                 </div>
                
-                <a href="#!" class="black-text d-flex justify-content-start mb-5" style="margin-top: 50px; padding-bottom: 30px; margin-left: 32px;">
+                <a href="#!" class="black-text d-flex justify-content-start mb-5" style="margin-top: -50px; padding-bottom: 30px; margin-left: 48px;">
                     <span class="pub__btn__inner pub__btn__inner--icon-primary-inverse"><span class="pub__btn__copy"><svg focusable="false" viewBox="0 0 24 24" class="pub__svg-icon pub__btn__icon" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.2937 12.7074L20.0008 12.0003L19.2938 11.2932L12.0008 3.99927L10.5865 5.41339L16.1727 11.0003H4V13.0003H16.1723L10.5855 18.5868L11.9996 20.0011L19.2937 12.7074Z"></path></svg></span></span>
 
                 </a>
@@ -534,10 +340,10 @@ body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-bu
             <img src="{% static 'img/bblock.jpg' %}" alt="" class="img">
             <div class="all-text">
                 <div class="title">
-                    <h3 class="title">Сооружения для очистки поверхностных сточных вод</h3>
+                    <h3 class="title">Накопительные ёмкости и резервуары</h3>
                 </div>
                 
-                <a href="#!" class="black-text d-flex justify-content-start mb-5" style="margin-top: 50px; padding-bottom: 30px; margin-left: 32px;">
+                <a href="#!" class="black-text d-flex justify-content-start mb-5" style="margin-top: -50px; padding-bottom: 30px; margin-left: 48px;">
                     <span class="pub__btn__inner pub__btn__inner--icon-primary-inverse"><span class="pub__btn__copy"><svg focusable="false" viewBox="0 0 24 24" class="pub__svg-icon pub__btn__icon" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.2937 12.7074L20.0008 12.0003L19.2938 11.2932L12.0008 3.99927L10.5865 5.41339L16.1727 11.0003H4V13.0003H16.1723L10.5855 18.5868L11.9996 20.0011L19.2937 12.7074Z"></path></svg></span></span>
 
                 </a>
@@ -549,10 +355,10 @@ body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-bu
             <img src="{% static 'img/bblock.jpg' %}" alt="" class="img">
                <div class="all-text">
                 <div class="title">
-                    <h3 class="title">Очистные сооружения промышленных сточных вод</h3>
+                    <h3 class="title">Водоподготовка и водоочистка</h3>
                 </div>
                 
-                <a href="#!" class="black-text d-flex justify-content-start mb-5" style="margin-top: 50px; padding-bottom: 30px; margin-left: 32px; ">
+                <a href="#!" class="black-text d-flex justify-content-start mb-5" style="margin-top: -50px; padding-bottom: 30px; margin-left: 48px; ">
                     <span class="pub__btn__inner pub__btn__inner--icon-primary-inverse"><span class="pub__btn__copy"><svg focusable="false" viewBox="0 0 24 24" class="pub__svg-icon pub__btn__icon" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.2937 12.7074L20.0008 12.0003L19.2938 11.2932L12.0008 3.99927L10.5865 5.41339L16.1727 11.0003H4V13.0003H16.1723L10.5855 18.5868L11.9996 20.0011L19.2937 12.7074Z"></path></svg></span></span>
 
                 </a>
@@ -585,9 +391,9 @@ body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-bu
       </div>
       <div class="b1lvk80c c66rnvm f1q5w654 g16gpiby g1947clq i194i22z sgwdtfk reverse2" style="background-color:#F5F5F5">
         <div class="g1ci6p1l v1y1f4kj v18by0fb">
-          <h2 class="g1xk08ng pub__h2 s1gshh7t">Подбор оборудования для вашего проекта </h2>
+          <h2 class="g1xk08ng pub__h2 s1gshh7t">Подбор оборудования <br>для вашего проекта </h2>
           <div class="g1ci6p1l vfh8y1x v18by0fb">
-            <div class="i76mo33 pub__designSystemText t91kxqv " style="color:#111111">
+            <div class="i76mo33 pub__designSystemText t91kxqv " style="color:#363435">
               <p> Получите бесплатную консультацию от квалифицированного специалиста нашей компании. Наша команда профессионалов учтет ваши пожелания, предложит наиболее подходящий вариант для правильной реализации и дальнейшей эксплуатации объекта.
                 <br>
                 <br> Оставьте заявку и мы перезвоним вам в ближайшее время.  </p>
@@ -613,282 +419,47 @@ body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-bu
 <div class="wrappersss">
 
 <!-- BLOCK -->
+{% for project in projects %}
 <div class="pub__carousel-slide ifp6bjs">
   <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
-
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
+    <div class="range-revamp-product-compact">
+  <a href="{% url 'new_detail' project.id %}" aria-label="{{project.title}}">
     <div class="range-revamp-product-compact__image-wrapper">
       <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
+        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="{{project.title}}" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{{project.img.url}}"  data-src="false" data-src-set="false"></div>
         <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
+        
+          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{{project.img_2.url}}">
+        
         </div>
       </div>
     </a>
-
-
     <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
+      <a href="{% url 'new_detail' project.id %}">
         <div class="range-revamp-compact-price-package">
           <div class="range-revamp-compact-price-package__additional-info">
             <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
+              <div class="range-revamp-header-section__title--small">{{project.title}}</div>
               <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
+                <span class="range-revamp-header-section__description-text">{{project.sub_title|truncatechars:200}}</span>
               </div>
             </div>
           </div>
-
-
         </div>
       </a>
-
     </div>
   </div>
 </div>
 </div>
-
-
-<!-- BLOCK -->
-
-  
-<!-- BLOCK -->
-<div class="pub__carousel-slide ifp6bjs">
-  <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
-
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
-    <div class="range-revamp-product-compact__image-wrapper">
-      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
-        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
-        </div>
-      </div>
-    </a>
-
-
-    <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
-        <div class="range-revamp-compact-price-package">
-          <div class="range-revamp-compact-price-package__additional-info">
-            <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
-              <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </a>
-
-    </div>
-  </div>
-</div>
-</div>
-
+{% endfor %}
 
 <!-- BLOCK -->
 
-
-  
-<!-- BLOCK -->
-<div class="pub__carousel-slide ifp6bjs">
-  <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
-
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
-    <div class="range-revamp-product-compact__image-wrapper">
-      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
-        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
-        </div>
-      </div>
-    </a>
-
-
-    <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
-        <div class="range-revamp-compact-price-package">
-          <div class="range-revamp-compact-price-package__additional-info">
-            <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
-              <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </a>
-
-    </div>
-  </div>
 </div>
-</div>
-
-
-<!-- BLOCK -->
-
-
-  
-<!-- BLOCK -->
-<div class="pub__carousel-slide ifp6bjs">
-  <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
-
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
-    <div class="range-revamp-product-compact__image-wrapper">
-      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
-        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
-        </div>
-      </div>
-    </a>
-
-
-    <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
-        <div class="range-revamp-compact-price-package">
-          <div class="range-revamp-compact-price-package__additional-info">
-            <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
-              <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </a>
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-<!-- BLOCK -->
-
-  
-<!-- BLOCK -->
-<div class="pub__carousel-slide ifp6bjs">
-  <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
-
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
-    <div class="range-revamp-product-compact__image-wrapper">
-      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
-        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
-        </div>
-      </div>
-    </a>
-
-
-    <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
-        <div class="range-revamp-compact-price-package">
-          <div class="range-revamp-compact-price-package__additional-info">
-            <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
-              <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </a>
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-<!-- BLOCK -->
-
-  
-<!-- BLOCK -->
-<div class="pub__carousel-slide ifp6bjs">
-  <div data-pub-child-placeholder="" class="">
-    <div class="range-revamp-product-compact" data-ref-id="50458001" data-product-number="50458001" data-product-type="ART" data-price="149" data-currency="RUB" data-product-name="BERGENES БЕРГЕНЕС" data-product-compact="" data-cs-capture="">
-
-  <a href="TEST" aria-label="BERGENES БЕРГЕНЕС - Подставка для смартфона/планшета">
-
-    <div class="range-revamp-product-compact__image-wrapper">
-      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
-        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="BERGENES БЕРГЕНЕС Подставка для смартфона/планшета, бамбук" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{% static 'img/index_image.jpg' %}"  data-src="false" data-src-set="false"></div><!-- HERE -->
-
-        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
-          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="https://rostproject.com/files/kns2.jpg"><!-- HERE -->
-        </div>
-      </div>
-    </a>
-
-
-    <div class="range-revamp-product-compact__bottom-wrapper">
-      <a href="#">
-        <div class="range-revamp-compact-price-package">
-          <div class="range-revamp-compact-price-package__additional-info">
-            <div class="range-revamp-header-section">
-              <div class="range-revamp-header-section__title--small">BERGENES БЕРГЕНЕС</div>
-              <div class="range-revamp-header-section__description">
-                <span class="range-revamp-header-section__description-text">Подставка для смартфона/планшетаLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita earum doloribus, corrupti nisi distinctio in. Blanditiis totam, debitis atque aliquam.</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </a>
-
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- BLOCK -->
-</div>
- 
-
 <style>
-    .thumb img {
-        -webkit-filter: grayscale(0);
-        filter: none;
-        background-color: #fff;
-    }
-
-    
-
-    .thumb {
-        padding: 5px;
-    }
+    .thumb img {-webkit-filter: grayscale(0);filter: none;background-color: #fff;}
+    .thumb {padding: 5px;}
 </style>
-
-
-
-
 </div>
 
 

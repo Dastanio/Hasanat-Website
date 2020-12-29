@@ -1,10 +1,8 @@
 h1.title{
 	font-weight: bold;
 	max-width: 50%;
-	margin-top: 30px;
 }
 p.text-subtitle1{
-	margin-top: 30px;
 	max-width: 45%;
 	font-weight: 400;
 }
@@ -34,6 +32,9 @@ a.see-more:hover{
 	background-color: #333;
 	color:  white;
 }
+p.text-subtitles{
+	margin-bottom: 50px;
+}
 
 div.three-block{
 	display: flex;
@@ -44,14 +45,6 @@ div.blocks{
 	width: 32%;
 }
 
-h3.title{
-	font-weight: bold;
-	margin-top: 30px;
-}
-
-p.text-subtitle{
-	margin-bottom: 60px;
-}
 footer{
 	margin-top: 80px;
 }

@@ -1,0 +1,761 @@
+{% extends 'main/base.html' %} 
+{% load static %}
+{% block content %} 
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/new_detail.css' %}">
+    </head>
+    <div class="wrapper">
+        <div class="raz">
+            <div class="content-fluids blocks-none">
+                <h3 class="title">{{project.title_2}}</h3>
+                <p class="subtitle">{{project.sub_title_2}}</p>
+                <br><br>
+
+                <a class="collapsed" data-toggle="collapse"  href="#collapse62" style=" display: flex; justify-content: center;">{{project.collapse_title_1}}</a>
+                <div id="collapse62" class="collapse">
+                    <div class="card-body">
+                        <p class="collapse-text">
+                            {{project.collapse_sub_title_1}}
+                        </p>
+                    </div>
+                </div>
+                <br><br><hr><br>
+                <a class="collapsed" data-toggle="collapse"  href="#collapse63" style=" display: flex; justify-content: center;">{{project.collapse_title_2}}</a>
+                <div id="collapse63" class="collapse">
+                    <div class="card-body">
+                        <p class="collapse-text">
+                            {{project.collapse_sub_title_2}}
+                        </p>
+                    </div>
+                </div>
+                <br><br><hr><br>
+                <a class="collapsed" data-toggle="collapse"  href="#collapse64" style="display: flex; justify-content: center;">{{project.collapse_title_3}}</a>
+                <div id="collapse64" class="collapse">
+                    <div class="card-body">
+                        <p class="collapse-text">
+                            {{project.collapse_sub_title_3}}
+                        </p>
+                    </div>
+                </div>
+                <br><br><hr><br>
+                <a class="collapsed" data-toggle="collapse"  href="#collapse66" style="display: flex; justify-content: center;">{{project.collapse_title_4}}</a>
+                <div id="collapse66" class="collapse">
+                    <div class="card-body">
+                        <p class="collapse-text">
+                            {{project.collapse_sub_title_4}}
+                        </p>
+                    </div>
+                </div>
+                <br><br><hr><br>
+            </div>
+            
+            <div class="content-fluids">
+                <div class="row rows">
+                    
+                    {% for img in images %}
+                    <div class="col-md-6">
+                        
+                        <div class="col-block">
+                            
+                                <img src="{{img.image.url}}" alt="" class="img-col">
+                            
+                        </div>
+                        
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="content-fluids">
+                <div class="rows">
+                    <div class="block-two-text">
+                        <h3 class="title-two-block">
+                            {{project.title_2}}
+                        </h3>
+                    </div>
+                    <div class="block-two-text">
+                        <p class="subtitle-two-block">
+                            {{project.sub_title_2}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+         
+            <div class="absolute">
+                <div class="sticky">
+                    <div class="drop-down-menu">
+
+                        <h3 class="title-collapse">
+                            {{project.title}}
+                        </h3>
+                        <p class="subtitle-collapse">
+                            {{project.sub_title}}
+                        </p>
+
+                        <br><br>
+                <a class="collapsed" data-toggle="collapse"  href="#collapse58" style="padding: 0 20px; display: flex; justify-content: center;">{{project.collapse_title_1}}</a>
+                <div id="collapse58" class="collapse">
+                    <div class="card-body">
+                        <p class="collapse-text">
+                            {{project.collapse_sub_title_1}}
+                        </p>
+                    </div>
+                </div>
+                <br><br><hr><br>
+                <a class="collapsed" data-toggle="collapse"  href="#collapse59" style="padding: 0 20px; display: flex; justify-content: center;">{{project.collapse_title_2}}</a>
+                <div id="collapse59" class="collapse">
+                    <div class="card-body">
+                        <p class="collapse-text">
+                            {{project.collapse_sub_title_2}}
+                        </p>
+                    </div>
+                </div>
+                <br><br><hr><br>
+                <a class="collapsed" data-toggle="collapse"  href="#collapse60" style="padding: 0 20px; display: flex; justify-content: center;">{{project.collapse_title_3}}</a>
+                <div id="collapse60" class="collapse">
+                    <div class="card-body">
+                        <p class="collapse-text">
+                            {{project.collapse_sub_title_3}}
+                        </p>
+                    </div>
+                </div>
+                <br><br><hr><br>
+                <a class="collapsed" data-toggle="collapse"  href="#collapse61" style="padding: 0 20px; display: flex; justify-content: center;">{{project.collapse_title_4}}</a>
+                <div id="collapse61" class="collapse">
+                    <div class="card-body">
+                        <p class="collapse-text">
+                            {{project.collapse_sub_title_4}}
+                        </p>
+                    </div>
+                </div>
+                <br><br><hr><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+<style>
+    div.card-header{
+        border: none;
+        background-color: #ffffff;
+        box-shadow: none;
+    }
+    div.card{
+        border: none;
+        background-color: #ffffff;
+        box-shadow: none;
+    }
+    #headingFour, #headingOne, #headingTwo, #headingThree{
+        border: none;
+        background-color: #ffffff;
+        box-shadow: none;
+    }
+    h2.mb-0{
+        border: none;
+        background-color: #ffffff;
+        box-shadow: none;
+    }
+    button:active {
+        outline: none;
+        border: none;
+    }
+
+    button:focus {
+        outline: none;
+        border: none;
+    }
+</style>
+
+    <div class="title"><h3 class="title">Новости</h3>  </div>
+
+
+<div class="wrappersss">
+
+<!-- BLOCK -->
+{% for new in all_news %}
+<div class="pub__carousel-slide ifp6bjs">
+  <div data-pub-child-placeholder="" class="">
+    <div class="range-revamp-product-compact">
+
+  <a href="{% url 'new_news_detail' new.id %}" aria-label="{{new.title}}">
+
+    <div class="range-revamp-product-compact__image-wrapper">
+      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
+        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="{{new.title}}" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{{new.img.url}}"  data-src="false" data-src-set="false"></div>
+
+        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
+          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{{new.img_2.url}}">
+        </div>
+      </div>
+    </a>
+
+
+    <div class="range-revamp-product-compact__bottom-wrapper">
+      <a href="{% url 'new_news_detail' new.id %}">
+        <div class="range-revamp-compact-price-package">
+          <div class="range-revamp-compact-price-package__additional-info">
+            <div class="range-revamp-header-section">
+              <div class="range-revamp-header-section__title--small">{{new.title}}</div>
+              <div class="range-revamp-header-section__description">
+                <span class="range-revamp-header-section__description-text">{{new.sub_title|truncatechars:200}}</span>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+</div>
+{% endfor %}
+
+<!-- BLOCK -->
+
+  
+
+</div>
+<!-- 
+<div class="grid">
+    <div class="grid-itm">
+        <h3>Отследить статус заказа
+</h3>
+Вы можете самостоятельно проверить статус Вашего заказа, перейдя по ссылке ниже. Обращаем внимание, что статус заказа можно проверить не ранее следующего дня после его размещения. Номер для отслеживания указан на бланке заказа.
+<div class = ' button'> <button>Оставить заявку</button></div>
+    </div>
+    <div class="grid-itm">
+        <h3>Отследить статус заказа
+</h3>
+Вы можете самостоятельно проверить статус Вашего заказа, перейдя по ссылке ниже. Обращаем внимание, что статус заказа можно проверить не ранее следующего дня после его размещения. Номер для отслеживания указан на бланке заказа.
+<div class = ' button'> <button>Оставить заявку</button></div>
+    </div>
+    <div class="grid-itm">
+        <h3>Отследить статус заказа
+</h3>
+Вы можете самостоятельно проверить статус Вашего заказа, перейдя по ссылке ниже. Обращаем внимание, что статус заказа можно проверить не ранее следующего дня после его размещения. Номер для отслеживания указан на бланке заказа.
+<div class = ' button'> <button>Оставить заявку</button></div>
+    </div>
+    <div class="grid-itm">
+        <h3>Отследить статус заказа
+</h3>
+Вы можете самостоятельно проверить статус Вашего заказа, перейдя по ссылке ниже. Обращаем внимание, что статус заказа можно проверить не ранее следующего дня после его размещения. Номер для отслеживания указан на бланке заказа.
+<div class = ' button'> <button>Оставить заявку</button></div>
+    </div>
+    <div class="grid-itm">
+        <h3>Отследить статус заказа
+</h3>
+Вы можете самостоятельно проверить статус Вашего заказа, перейдя по ссылке ниже. Обращаем внимание, что статус заказа можно проверить не ранее следующего дня после его размещения. Номер для отслеживания указан на бланке заказа.
+<div class = ' button'> <button>Оставить заявку</button></div>
+    </div>
+    <div class="grid-itm">
+        <h3>Отследить статус заказа
+</h3>
+Вы можете самостоятельно проверить статус Вашего заказа, перейдя по ссылке ниже. Обращаем внимание, что статус заказа можно проверить не ранее следующего дня после его размещения. Номер для отслеживания указан на бланке заказа.
+<div class = ' button'> <button>Оставить заявку</button></div>
+    </div>
+    <div class="grid-itm">
+        <h3>Отследить статус заказа
+</h3>
+Вы можете самостоятельно проверить статус Вашего заказа, перейдя по ссылке ниже. Обращаем внимание, что статус заказа можно проверить не ранее следующего дня после его размещения. Номер для отслеживания указан на бланке заказа.
+<div class = ' button'> <button>Оставить заявку</button></div>
+    </div>
+    <div class="grid-itm">
+        <h3>Отследить статус заказа
+</h3>
+Вы можете самостоятельно проверить статус Вашего заказа, перейдя по ссылке ниже. Обращаем внимание, что статус заказа можно проверить не ранее следующего дня после его размещения. Номер для отслеживания указан на бланке заказа.
+<div class = ' button'> <button>Оставить заявку</button></div>
+    </div>
+
+</div>
+<style type="text/css">
+    .grid {
+            display: grid;
+            grid-template-columns: 3fr 3fr ;
+            grid-gap: 2em;
+    }
+
+    .button {
+        margin-top: 25px;
+    }
+    .button > button{
+        padding: 7px;
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+    .button > button:hover {
+        background-color: #111
+    }
+
+    @media  screen and (max-width: 900px) {
+        .grid {
+        grid-template-columns: 3fr ;
+        }
+    }
+</style> -->
+
+
+<!--     <div class="grid-form">
+        <div class="grid-itms">
+            <div class="icon"><img src="https://flotenk.ru/local/templates/cw_template/images/r-icon-1.svg"></div>
+            <div class="h4-title"> <h4>Получить консультацию</h4></div>
+             <div class="gob">специалиста по продукции</div>
+            <div class="form-button"><button type="button"  data-toggle="modal" data-target="#basicExampleModal">Получить консультацию</button></div>
+        </div>
+
+
+
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Укажите телефон для связи
+</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<form method="post" action="/">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Телефон</label>
+    <input type="tel" required="" class="form-control" id="formGroupExampleInput" placeholder="Введите номер телефона">
+  </div>
+<div class="modal-form-button"><input type="submit" value="Отправить"></div>
+</form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+        <div class="grid-itms">
+            <div class="icon"><img src="https://flotenk.ru/local/templates/cw_template/images/r-icon-2.svg"></div>
+            <div class="h4-title"> <h4>Получить на e-mail опросный лист</h4></div>
+             <div class="gob">для заполнения
+в удобное время</div>
+            <div class="form-button"><button type="button"  data-toggle="modal" data-target="#basicExampleModal2">Получить опросный лист</button></div>
+
+
+
+<div class="modal fade" id="basicExampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">Получите опросный лист
+</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<form method="post" action="/">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Телефон</label>
+    <input type="tel" required="" class="form-control" id="formGroupExampleInput" placeholder="Введите номер телефона">
+  </div>
+
+
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Введите ваш e-mail</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="my@example.com">
+  </div>
+
+<div class="modal-form-button2"><input type="submit" value="Отправить"></div>
+</form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+        </div>
+        <div class="grid-itms">
+            <div class="icon"><img src="https://flotenk.ru/local/templates/cw_template/images/r-icon-3.svg"></div>
+             <div class="h4-title"><h4>Заполнить опросный
+лист онлайн </h4></div>
+
+             <div class="gob" >для получения быстрого ответа</div>
+            <div class="form-button"><button type="button"  data-toggle="modal" data-target="#basicExampleModal3">Заполнить опросный лист</button></div>
+
+
+<div class="modal fade" id="basicExampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel3">Опросный лист
+</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<form method="post" action="/">
+
+
+<select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+    <option selected>Не выбрано</option>
+    <option >Очистные сооружения дождевого стока</option>
+    <option >Очистные сооружения бытовых стоков</option>
+    <option >Очистные сооружения промышленных стоков</option>
+    <option >Жироотделитель</option>
+    <option >Химстойкая емкость</option>
+    <option >Канализационная насосная станция (КНС)</option>
+    <option >Станция повышения давления</option>
+    <option >Пожарный резервуар</option>
+    <option >Накопительная емкость</option>
+    <option >Пищевая (для воды) емкость</option>
+    <option >Топливная (транспортная) емкость</option>
+    <option >Композитные профили</option>
+</select>
+<br><br>
+<h5>Информация о заказчике:</h5>
+<br>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Телефон</label>
+    <input type="tel" required="" class="form-control" id="formGroupExampleInput" placeholder="Введите номер телефона">
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Название компании</label>
+    <input type="text" required="" class="form-control" id="formGroupExampleInput2">
+  </div>
+
+    <div class="form-group">
+    <label for="formGroupExampleInput3">ИНН</label>
+    <input type="number" required="" class="form-control" id="formGroupExampleInput3">
+  </div>
+
+    <div class="form-group">
+    <label for="formGroupExampleInput3">Город</label>
+    <input type="text" required="" class="form-control" id="formGroupExampleInput3">
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Введите ваш e-mail</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="my@example.com">
+  </div>
+
+    <div class="form-group">
+    <label for="formGroupExampleInput4">Адрес обьекта</label>
+    <input type="text" required="" class="form-control" id="formGroupExampleInput4">
+  </div>
+
+
+<div class="modal-form-button3"><input type="submit" value="Отправить"></div>
+</form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+        </div>
+    </div> -->
+
+    <style type="text/css">
+        .grid-form {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr;
+            grid-gap: 1em;
+            margin-top: 20px;
+
+        }
+
+        .grid-itms {
+            padding: 20px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        .h4-title {
+            height: 70px;
+        }
+        .gob {
+            height: 140px;
+        }
+
+        div.icon {
+            height: 100px;
+        }
+
+        .form-button > button {
+            border: 1px solid black; 
+            padding: 15px;
+            width: 250px;
+            color:  white;
+            background-color: #111
+
+        }
+
+        .icon {
+            margin-bottom: 20px;
+        }
+
+        .modal-body {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .modal-form-button {
+            margin-left: calc(50% - 100px);
+            margin-top: 10px;
+
+        }
+        .modal-form-button2 {
+            margin-left: calc(50% - 100px);
+            margin-top: 10px;
+
+        }
+        .modal-form-button3 {
+            margin-left: calc(50% - 100px);
+            margin-top: 10px;
+
+        }
+
+        .modal-form-button > input {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+            padding: 8px;
+            width: 200px;
+        }
+        .modal-form-button > input:hover {
+            background-color: #333;
+        }
+
+
+
+        .modal-form-button2 > input {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+            padding: 8px;
+            width: 200px;
+        }
+        .modal-form-button2 > input:hover {
+            background-color: #333;
+        }
+
+
+        .modal-form-button3 > input {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+            padding: 8px;
+            width: 200px;
+        }
+        .modal-form-button3 > input:hover {
+            background-color: #333;
+        }
+        @media screen and (max-width: 1000px) {
+            .grid-form {
+                grid-template-columns: 3fr 3fr; 
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .grid-form {
+                grid-template-columns: 3fr; 
+            }
+
+            .grid-itms {
+                text-align: center;
+            }
+            .h4-title {
+                height: 40px;
+            }
+            .gob {
+                height: 100px;
+                margin-top: 30px;
+            }
+        .modal-form-button2 {
+            margin-left: calc(50% - 150px);
+
+
+        }
+        .modal-form-button3 {
+            margin-left: calc(50% - 150px);
+
+
+        }
+        }
+
+    </style>
+
+    <div class="title"><h3 class="title">Проекты</h3>  </div>
+
+
+<div class="wrappersss">
+
+<!-- BLOCK -->
+{% for project in all_projects %}
+<div class="pub__carousel-slide ifp6bjs">
+  <div data-pub-child-placeholder="" class="">
+    <div class="range-revamp-product-compact">
+
+  <a href="{% url 'new_detail' project.id %}" aria-label="{{project.title}}">
+
+    <div class="range-revamp-product-compact__image-wrapper">
+      <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square">
+        <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="{{project.title}}" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{{project.img.url}}"  data-src="false" data-src-set="false"></div>
+
+        <div class="range-revamp-aspect-ratio-image range-revamp-aspect-ratio-image--square range-revamp-product-compact__image-hover range-revamp-product-compact__image-hover--active">
+          <img loading="lazy" class="range-revamp-aspect-ratio-image__image" alt="" sizes="(max-width: 400px) 80px, (max-width: 1450px) 160px, 300px" src="{{project.img_2.url}}">
+        </div>
+      </div>
+    </a>
+
+
+    <div class="range-revamp-product-compact__bottom-wrapper">
+      <a href="{% url 'new_detail' project.id %}">
+        <div class="range-revamp-compact-price-package">
+          <div class="range-revamp-compact-price-package__additional-info">
+            <div class="range-revamp-header-section">
+              <div class="range-revamp-header-section__title--small">{{project.title}}</div>
+              <div class="range-revamp-header-section__description">
+                <span class="range-revamp-header-section__description-text">{{project.sub_title|truncatechars:200}}</span>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+</div>
+{% endfor %}
+
+<!-- BLOCK -->
+
+  
+
+</div>
+
+
+<style type="text/css">
+.pub__designSystemBase img{border-style:none;}
+.pub__designSystemBase button{font-family:inherit;font-size:100%;line-height:1.5;margin:0;}
+.pub__designSystemBase button{overflow:visible;}
+.pub__designSystemBase button{text-transform:none;}
+.pub__designSystemBase button,.pub__designSystemBase [type="button"]{-webkit-appearance:button;}
+.pub__designSystemBase button::-moz-focus-inner,.pub__designSystemBase [type="button"]::-moz-focus-inner{border-style:none;padding:0;}
+.pub__designSystemBase button:-moz-focusring,.pub__designSystemBase [type="button"]:-moz-focusring{outline:1px dotted ButtonText;}
+.pub__designSystemBase *,.pub__designSystemBase *::before,.pub__designSystemBase *::after{box-sizing:inherit;outline:none;}
+.pub__carousel-slide{max-width:100%;position:relative;flex-shrink:0;margin-left:0;margin-right:1.25rem; margin-bottom: 20px;}
+.ifp6bjs{flex-basis:calc(75% - 1.25rem);flex-shrink:0;}
+@media (min-width:37.5em){
+.ifp6bjs{flex-basis:calc(33.33% - 1.25rem);}
+}
+@media (min-width:75em){
+.ifp6bjs{flex-basis:calc(25% - 1.25rem);}
+}
+
+
+.range-revamp-svg-icon{display:inline-block;height:1.5rem;width:1.5rem;vertical-align:middle;fill:currentColor;-webkit-transition-property:fill,-webkit-transform;transition-property:fill,-webkit-transform;-o-transition-property:transform,fill;transition-property:transform,fill;transition-property:transform,fill,-webkit-transform;-webkit-transition-duration:.3s;-o-transition-duration:.3s;transition-duration:.3s;-webkit-transition-timing-function:ease;-o-transition-timing-function:ease;transition-timing-function:ease;}
+.js-focus-visible :focus:not(.focus-visible){outline:none;}
+.range-revamp-toggle-button{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;text-decoration:none;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center;border:0;font-weight:700;font-size:.875rem;line-height:1.42857;padding:0;-webkit-transition-property:all;-o-transition-property:all;transition-property:all;-webkit-transition-duration:.1s;-o-transition-duration:.1s;transition-duration:.1s;-webkit-transition-timing-function:cubic-bezier(.4,0,.4,1);-o-transition-timing-function:cubic-bezier(.4,0,.4,1);transition-timing-function:cubic-bezier(.4,0,.4,1);cursor:pointer;-webkit-box-sizing:border-box;box-sizing:border-box;background:transparent;border-radius:52px;vertical-align:top;}
+.range-revamp-toggle-button:active,.range-revamp-toggle-button:focus,.range-revamp-toggle-button:hover{text-decoration:none;}
+.range-revamp-toggle-button .range-revamp-svg-icon{-ms-flex-negative:0;flex-shrink:0;}
+.range-revamp-toggle-button--transparent{background:transparent;font-size:.75rem;line-height:1.5;border-bottom:1px solid transparent;-webkit-transition:border-bottom .2s ease-in-out;-o-transition:border-bottom .2s ease-in-out;transition:border-bottom .2s ease-in-out;color:#484848;border-radius:0;}
+.range-revamp-toggle-button--transparent:after{content:"";position:absolute;top:-.625rem;bottom:-.625rem;left:-.625rem;right:-.625rem;display:block;}
+.range-revamp-toggle-button--transparent:active,.range-revamp-toggle-button--transparent:hover{border-color:currentColor;}
+.range-revamp-toggle-button--transparent:active{color:#111;}
+.range-revamp-toggle-button--transparent.range-revamp-toggle-button--icon-only{color:#929292;background:transparent;padding:.5rem;border-radius:50%;border-bottom:none;}
+.range-revamp-toggle-button--transparent.range-revamp-toggle-button--icon-only:after{display:none;}
+.range-revamp-toggle-button--transparent.range-revamp-toggle-button--icon-only:hover{color:#484848;}
+.range-revamp-toggle-button--transparent.range-revamp-toggle-button--icon-only:active{color:#111;}
+.range-revamp-toggle-button--transparent:disabled{color:#dfdfdf;cursor:default;}
+.range-revamp-toggle-button--transparent:disabled:hover{border-color:transparent;}
+.range-revamp-btn{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;text-decoration:none;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center;border:0;font-weight:700;font-size:.875rem;line-height:1.42857;padding:0;-webkit-transition-property:all;-o-transition-property:all;transition-property:all;-webkit-transition-duration:.1s;-o-transition-duration:.1s;transition-duration:.1s;-webkit-transition-timing-function:cubic-bezier(.4,0,.4,1);-o-transition-timing-function:cubic-bezier(.4,0,.4,1);transition-timing-function:cubic-bezier(.4,0,.4,1);cursor:pointer;-webkit-box-sizing:border-box;box-sizing:border-box;background:transparent;border-radius:52px;vertical-align:top;}
+.range-revamp-btn .range-revamp-btn__copy{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;opacity:1;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);-webkit-transition-property:opacity,-webkit-transform;transition-property:opacity,-webkit-transform;-o-transition-property:opacity,transform;transition-property:opacity,transform;transition-property:opacity,transform,-webkit-transform;-webkit-transition-duration:.25s;-o-transition-duration:.25s;transition-duration:.25s;-webkit-transition-timing-function:cubic-bezier(.4,0,.4,1);-o-transition-timing-function:cubic-bezier(.4,0,.4,1);transition-timing-function:cubic-bezier(.4,0,.4,1);}
+.range-revamp-btn:active,.range-revamp-btn:focus,.range-revamp-btn:hover{text-decoration:none;}
+.range-revamp-btn .range-revamp-svg-icon{-ms-flex-negative:0;flex-shrink:0;display:inline-block;height:1.5rem;width:1.5rem;vertical-align:middle;fill:currentColor;-webkit-transition-property:fill,-webkit-transform;transition-property:fill,-webkit-transform;-o-transition-property:transform,fill;transition-property:transform,fill;transition-property:transform,fill,-webkit-transform;-webkit-transition-duration:.3s;-o-transition-duration:.3s;transition-duration:.3s;-webkit-transition-timing-function:ease;-o-transition-timing-function:ease;transition-timing-function:ease;}
+.range-revamp-btn__inner--icon-emphasised{-webkit-transition-property:all;-o-transition-property:all;transition-property:all;-webkit-transition-duration:.1s;-o-transition-duration:.1s;transition-duration:.1s;-webkit-transition-timing-function:cubic-bezier(.4,0,.4,1);-o-transition-timing-function:cubic-bezier(.4,0,.4,1);transition-timing-function:cubic-bezier(.4,0,.4,1);position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:3.5rem;background:#0058a3;border-radius:52px;padding:0 1rem;color:#fff;}
+.range-revamp-btn__inner--icon-emphasised.range-revamp-btn--small{padding:0 .5rem;}
+.range-revamp-btn__inner--icon-emphasised:hover{background-color:#004f93;color:#fff;}
+.range-revamp-btn__inner--icon-emphasised:active{background-color:#003e72;color:#fff;}
+.range-revamp-btn__inner--icon-emphasised:disabled{background:#dfdfdf;color:#929292;cursor:default;}
+.range-revamp-btn--small{height:2.5rem;padding:0 1.5rem;font-size:18px;line-height:1.33333;}
+.range-revamp-btn:disabled>.range-revamp-btn__inner{background:#dfdfdf;color:#929292;cursor:default;}
+.range-revamp-header-section__title--small{font-weight:bold;color:#111;line-height:1.5;margin-bottom:.3125rem;}
+.range-revamp-header-section__title--small{font-size:18px;}
+.range-revamp-header-section__description{letter-spacing:0;font-weight:400;font-size:16px;color:#363435;}
+.range-revamp-header-section__description-text:after{content:" ";}
+@media (min-width:37.5em){
+.range-revamp-header-section__title--small{font-size:18px;}
+.range-revamp-header-section__description{font-size: 16px;}
+}
+.range-revamp-price{display:inline-block;font-weight:700;color:#000;font-size:1rem;white-space:pre;}
+.range-revamp-price__integer{line-height:1.1875;font-size:1.375rem;vertical-align:inherit;}
+@media (max-width:37.5em){
+.range-revamp-price__integer{font-size:1rem;}
+}
+.range-revamp-price__currency-symbol--trailing{unicode-bidi:bidi-override;font-size:.875rem;margin-left:.125rem;}
+.range-revamp-price__currency-symbol--superscript{line-height:.9;font-size:.6875rem;vertical-align:text-top;}
+@media (max-width:37.5em){
+.range-revamp-price__currency-symbol--superscript{line-height:1.6;font-size:.625rem;}
+}
+.range-revamp-compact-price-package:last-child{margin-bottom:.9375rem;}
+@media (max-width:37.5em){
+.range-revamp-compact-price-package:last-child{margin-bottom:.625rem;}
+}
+.range-revamp-compact-price-package__price-wrapper{margin-bottom:.625rem;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-wrap:wrap;flex-wrap:wrap;}
+.range-revamp-compact-price-package__price-wrapper .range-revamp-price .range-revamp-price__integer{line-height:.90909;}
+.range-revamp-compact-price-package__additional-info{margin-top:2.0625rem;margin-bottom:.625rem;}
+.range-revamp-compact-price-package__previous-price-wrapper{line-height:normal;margin-bottom:.3125rem;}
+.range-revamp-aspect-ratio-image{width:100%;position:relative;height:auto;display:block;padding-bottom:75%;background:#f5f5f5;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.range-revamp-aspect-ratio-image__image{-o-object-fit:cover;object-fit:cover;width:100%;height:100%;position:absolute;left:0;top:0;font-family:"object-fit: cover;";color:transparent;}
+.range-revamp-aspect-ratio-image--square{padding-bottom:100%;}
+.range-revamp-product-compact{max-width:25rem;position:relative;}
+.range-revamp-product-compact__image-wrapper{position:relative;}
+.range-revamp-product-compact:hover .range-revamp-header-section__title--small{text-decoration:underline;}
+.range-revamp-product-compact a{color:#000;text-decoration:none;display:block;}
+.range-revamp-product-compact a:active,.range-revamp-product-compact a:focus,.range-revamp-product-compact a:hover{color:#000;text-decoration:none;}
+.range-revamp-product-compact__image-hover{-webkit-transition:opacity .2s ease-in-out;-o-transition:opacity .2s ease-in-out;transition:opacity .2s ease-in-out;opacity:0;position:absolute;top:0;left:0;}
+@media (hover:hover){
+.range-revamp-product-compact:hover .range-revamp-product-compact__image-hover--active{opacity:1;}
+}
+.range-revamp-product-compact__bottom-wrapper{position:relative;}
+.range-revamp-product-compact .range-revamp-product-compact__add-to-cart-button{display:none;-webkit-transition:opacity .2s ease-in-out;-o-transition:opacity .2s ease-in-out;transition:opacity .2s ease-in-out;position:absolute;right:1.25rem;bottom:.3125rem;opacity:0;}
+.range-revamp-product-compact .range-revamp-product-compact__add-to-cart-button>*{pointer-events:none;}
+.range-revamp-product-compact__add-to-list-button{display:none;-webkit-transition:opacity .2s ease-in-out;-o-transition:opacity .2s ease-in-out;transition:opacity .2s ease-in-out;position:absolute;right:0;top:0;opacity:0;}
+.range-revamp-product-compact__add-to-list-button>*{pointer-events:none;}
+body[data-list-available=true] .range-revamp-product-compact__add-to-list-button,body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-button{display:block;}
+body[data-list-available=true] .range-revamp-product-compact:hover .range-revamp-product-compact__add-to-list-button,body[data-shopping-available=true] .range-revamp-product-compact:hover .range-revamp-product-compact__add-to-cart-button{opacity:1;}
+@media (max-width:56.25em){
+.range-revamp-product-compact{padding-bottom:1rem;}
+.range-revamp-product-compact__add-to-list-button{opacity:1;}
+body[data-shopping-available=true] .range-revamp-product-compact__add-to-cart-button{opacity:1;top:100%;right:0;height:2.5rem;}
+}
+
+.wrappersss {
+  overflow-x: scroll;
+  display: flex;
+  scrollbar-color: #458245 #714826;
+}
+</style>
+</div>
+
+{%endblock%}

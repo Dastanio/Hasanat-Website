@@ -1,9 +1,6 @@
-h1.title{
-	font-weight: bold;
-}
+
 p.subtitle{
 	max-width: 65%;
-	margin-top: 40px;
 }
 video.video{
 	max-width: 100%;
@@ -11,8 +8,6 @@ video.video{
 }
 h3.title{
 	max-width: 40%;
-	margin-top: 40px;
-	font-weight: bold;
 }
 p.min-subtitle{
 	max-width: 45%;
@@ -30,9 +25,7 @@ div.img img{
 	width: 100%;
 }
 
-section{
-	margin-bottom: 60px;
-}
+
 @media screen and (max-width: 990px){
 	div.two-block{
 		display: block;

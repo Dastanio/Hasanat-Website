@@ -4,10 +4,9 @@
 	width: 40%;
 }
 .wrapper p.sub-title-5{
-	padding-top: 20px;
-	padding-bottom: 20px;
 	max-width: 50%;
 	color: #484848;
+	margin-bottom: 30px;
 }
 .all-content{
 	height: 650px;

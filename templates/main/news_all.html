@@ -13,7 +13,7 @@
         <h2 class="title">НОВОСТИ</h2>
     </div>
     <div class="content">
-        <img src="https://www.ikea.com/images/bd/47/bd4742d9e3cec56242c1e3f305a3b7ff.png?f=xs" alt="" class="img">
+        <img src="{% static  'img/bblock.jpg' %}" alt="" class="img">
         <p class="text">Мы поддерживаем разумное потребление и хотим, чтобы мебель ИКЕА оставалась с вами как можно дольше. Но если вы решили обновить интерьер и не знаете, куда деть старую мебель, мы подскажем, как дать ей вторую жизнь!</p>
     </div>
 </div>
@@ -25,7 +25,7 @@
         <img src="{{ new.img.url }}" alt="" class="img">
         <h5 class="title-s">{{new.title}}</h5>
         <p class="text-subtitle">{{new.sub_title|truncatechars:"100"}}</p>
-        <a href="" class="hr">
+        <a href="{% url 'new_news_detail' new.id %}" class="hr">
             <p class="hr">Узнать подробнее</p>
         </a>
     </div>

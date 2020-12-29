@@ -6,19 +6,11 @@ div.three{
 div.cardd{
 	width: 32%;
 }
-
 div.cardd img.img{
 	width: 100%;
-
-}
-
-h3.title{
-	font-weight: bold;
-	padding-left: 16px;
-	font-size: 20px;
 }
 p.text-subtitle{
-	padding: 16px;
+	padding: 0 24px 24px 24px;
 }
 div.all-text{
 	background-color: #EAEAEA;

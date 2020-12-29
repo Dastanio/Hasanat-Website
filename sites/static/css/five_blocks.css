@@ -4,6 +4,7 @@
 	justify-content: space-between;
 	flex-direction: row;
 	background-color: #eaeaea;
+	margin-bottom: 50px;
 }
 div.image{
 	width: 50%;
@@ -18,8 +19,11 @@ div.image img{
 	height: 100%;
 	padding: 24px;
 }
+h3.titles{
+	margin-bottom: 0;
+}
 h3.title{
-	margin: 0;
+	margin-bottom: 24px;
 	padding: 0;
 }
 div.wrapper h3.titles{

@@ -1,246 +1,113 @@
-
-p, h1, h2, h3, h4, h5, h6, li, a, span, strong, small{
-	font-family: 'Noto Sans', sans-serif;
+.block-1{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	margin-bottom: 50px;
 }
-h1, h2. h3, h4, h5, h6{
+h3.title-block{
+	color: #111;
+	font-size: 20px;
 	font-weight: bold;
 }
-.pub__designSystemBase hr{box-sizing:content-box;height:0;overflow:visible;}
-.pub__designSystemBase strong{font-weight:700;}
-.pub__designSystemBase *,.pub__designSystemBase *::before,.pub__designSystemBase *::after{box-sizing:inherit;outline:none;}
-.pub__btn{position:relative;display:inline-flex;text-decoration:none;justify-content:center;align-items:center;text-align:center;border:0;font-weight:700;font-size:.875rem;line-height:1.5;padding:0;transition-property:all;transition-duration:100ms;transition-timing-function:cubic-bezier(0.4, 0, 0.4, 1);cursor:pointer;box-sizing:border-box;background:transparent;border-radius:64px;vertical-align:top;}
-.pub__btn .pub__btn__copy{display:flex;align-items:center;justify-content:center;opacity:1;-webkit-transform:translateY(0);transform:translateY(0);transition-property:opacity,-webkit-transform;transition-property:opacity,transform;transition-property:opacity,transform,-webkit-transform;transition-duration:250ms;transition-timing-function:cubic-bezier(0.4, 0, 0.4, 1);}
-.pub__btn .pub__btn__label{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.pub__btn:hover,.pub__btn:active,.pub__btn:focus{text-decoration:none;}
-.pub__btn__inner--primary{display:inline-flex;width:100%;justify-content:center;align-items:center;transition-property:all;transition-duration:100ms;transition-timing-function:cubic-bezier(0.4, 0, 0.4, 1);height:3.5rem;background:#111;color:#fff;border-radius:64px;padding:0 2rem;}
-.pub__btn__inner--primary:hover{background:#333;color:#fff;border-radius:64px;}
-.pub__btn__inner--primary:focus{color:#fff;}
-.pub__btn__inner--primary:active{background:#000;color:#fff;border-radius:64px;}
-.pub__btn--small{height:2.5rem;padding:0 1.5rem;font-size:.75rem;line-height:1.33333;}
-.pub__btn:disabled>.pub__btn__inner{background:#dfdfdf;color:#929292;cursor:default;}
-.pub__link{text-decoration:underline;font-weight:400;color:#484848;}
-.pub__link:focus,.pub__link:hover{color:#111;}
-.pub__link:active{color:#111;}
-.pub__link--black{color:#111;}
-.pub__link--black:hover,.pub__link--black:focus,.pub__link--black:active{color:#333;}
-.pub__breadcrumb{color:#111;border-bottom:1px solid #dfdfdf;}
-.pub__breadcrumb__link{text-decoration:none;font-size:.75rem;line-height:1.5;font-weight:400;vertical-align:middle;}
-.pub__breadcrumb__link:hover,.pub__breadcrumb__link:active,.pub__breadcrumb__link:focus{text-decoration:underline;}
-.pub__breadcrumb__link::after{content:"";position:absolute;top:-.75rem;bottom:-.75rem;left:-.5rem;right:-.5rem;display:block;}
-.pub__breadcrumb__list{list-style-type:none;display:inline-block;margin:0;width:100%;padding:1rem 0;}
-.pub__breadcrumb__list-item{display:none;max-width:100%;margin:0;padding-left:0;}
-.pub__breadcrumb__list-item::after{content:"\203A";display:inline;margin:0 .25rem;font-size:1rem;line-height:1.125;}
-.pub__breadcrumb__list-item:nth-last-child(3),.pub__breadcrumb__list-item:nth-last-child(2){display:inline;}
-.pub__breadcrumb__list-item:nth-last-child(2)::after{display:none;}
-.pub__breadcrumb__list-item:last-child::after{content:"";display:none;}
-@media (min-width: 56.25em){
-.pub__breadcrumb .pub__breadcrumb__list-item{display:inline;}
-.pub__breadcrumb .pub__breadcrumb__list-item:nth-last-child(2)::after{display:inline;}
-.pub__breadcrumb .pub__breadcrumb__list-item:last-child .pub__breadcrumb__link{color:#484848;pointer-events:none;cursor:auto;}
-.pub__breadcrumb .pub__breadcrumb__list-item:last-child .pub__breadcrumb__link:hover,.pub__breadcrumb .pub__breadcrumb__list-item:last-child .pub__breadcrumb__link:active,.pub__breadcrumb .pub__breadcrumb__list-item:last-child .pub__breadcrumb__link:focus{text-decoration:none;}
+p.sub-title-block{
+	color: #363435;
+    font-weight: 500;
+    font-size: 16px;
+    padding-bottom: 30px;
+    margin-bottom: 0;
 }
-.pub__page-container{max-width:112rem;margin:0 auto;padding:0 1.25rem;box-sizing:border-box;}
-@media (min-width: 37.5em){
-.pub__page-container{padding:0 2rem;}
+a.href-block{
+	color: white;
+	background-color: black;
+	border-radius: 50px;
+	font-size: 16px;
+	padding: 10px 30px 10px 30px;
 }
-@media (min-width: 56.25em){
-.pub__page-container{padding:0 3rem;}
+a.href-block:hover{
+	background-color: #333;
+	text-decoration: none;
 }
-@media (min-width: 75em){
-.pub__page-container{padding:0 2.5rem 0 1.25rem;}
+div.block-content{
+	width: 50%;
+	padding: 48px 48px 48px 0;
+	box-sizing: border-box;
 }
-@media (min-width: 75em){
-.pub__page-container__inner{display:-ms-grid;display:grid;grid-column-gap:1.25rem;-ms-grid-columns:(minmax(0, 1fr))[13];grid-template-columns:repeat(13, minmax(0, 1fr));margin:0 -.625rem;}
-.pub__page-container__main{-ms-grid-column:2;-ms-grid-column-span:12;grid-column:2 / 14;-ms-grid-row:1;grid-row:1;margin:0 .625rem;}
+div.block-content-2{
+	width: 50%;
+	padding: 48px 0 48px 48px;
+	box-sizing: border-box;
 }
-p:not(:last-of-type){margin-bottom:.75rem;}
-h1{color:#111;font-size:1.5rem;line-height:1.33333;letter-spacing:-.0075rem;font-weight:700;}
-@media (min-width: 37.5em){
-h1{font-size:2.25rem;line-height:1.33333;letter-spacing:-.04rem;}
+div.block-content-11, div.block-content-22, div.block-content-33{
+	width: 33.333%;
+	box-sizing: border-box;
+	padding: 20px;
 }
-h2{color:#111;font-size:1.125rem;line-height:1.44444;font-weight:700;}
-@media (min-width: 37.5em){
-h2{font-size:1.375rem;line-height:1.45455;}
+@media screen and (max-width: 920px){
+	.block-1{
+		display: block;
+	}
+	div.block-content{
+		width: 100%;
+		padding: 48px 0 48px 0;
+	}
+	div.block-content-2{
+		width: 100%;
+		padding: 48px 0 48px 0;
+	}
 }
-h3{color:#111;font-size:1rem;line-height:1.5;font-weight:700;}
-.pub__h1{color:#111;font-size:1.5rem;line-height:1.33333;letter-spacing:-.0075rem;font-weight:700;}
-@media (min-width: 37.5em){
-.pub__h1{font-size:2.25rem;line-height:1.33333;letter-spacing:-.04rem;}
-}
-/*! CSS Used from: https://www.ikea.com/ru/ru/stylesheets/main.ec83359ac00325a5388f.css */
-.s1vteuqm{display:flex;flex-wrap:wrap;margin:calc(0.5rem * -1);}
-@media (min-width:37.5em){
-.s1vteuqm{margin:calc(1rem * -1);}
-}
-@media (min-width:56.25em){
-.s1vteuqm{margin:calc(1.25rem * -1);}
-}
-@media (min-width:75em){
-.s1vteuqm{margin:calc(1.25rem * -1);}
-}
-.s1vteuqm > *{flex-grow:0;width:100%;margin:0.5rem;}
-.s1vteuqm > *:empty{display:none;}
-@media (min-width:37.5em){
-.s1vteuqm > *{margin:1rem;}
-}
-@media (min-width:56.25em){
-.s1vteuqm > *{margin:1.25rem;}
-}
-@media (min-width:75em){
-.s1vteuqm > *{margin:1.25rem;}
-}
-.c130l69h > *{flex-basis:calc(100% - 0.5rem * 2);}
-@media (min-width:350px){
-.xsvsjnc > *{flex-basis:calc(100% - 0.5rem * 2);}
-}
-@media (min-width:37.5em){
-.ml4isbd > *{flex-basis:calc(49.9% - 1rem * 2);}
-}
-@media (min-width:56.25em){
-.l1d02xze > *{flex-basis:calc(49.9% - 1.25rem * 2);}
-}
-@media (min-width:75em){
-.xg243a6 > *{flex-basis:calc(49.9% - 1.25rem * 2);}
-}
-.v18by0fb{flex-direction:column;}
-.v1gpv7o0 > *{margin-bottom:calc( 2.5rem + 2.5rem )!important;}
-@media (min-width:37.5em){
-.v1gpv7o0 > *{margin-bottom:calc( 4rem + 2.5rem )!important;}
-}
-.v19w64p3 > *{margin-bottom:2.5rem!important;}
-.vdrm3z7 > *{margin-bottom:2.5rem!important;}
-@media (min-width:37.5em){
-.vdrm3z7 > *{margin-bottom:4rem!important;}
-}
-.vz2frqh > *{margin-bottom:1rem!important;}
-@media (min-width:75em){
-.vz2frqh > *{margin-bottom:2.5rem!important;}
-}
-.g1ci6p1l > *:last-child{margin-bottom:0!important;}
-.s1gshh7t{font-weight:bold;margin:0;word-break:break-word;}
-@media (min-width:56.25em){
-.c1lc5xb3{width:calc(7 / 12 * 100%);}
-}
-.t91kxqv{font-style:normal;font-weight:normal;word-break:break-word;}
-.w1fdzi2f a:hover{color:#111111;}
-.w1fdzi2f p{margin-bottom:2rem;}
-@media (min-width:37.5em){
-.w1fdzi2f p{line-height:24px;}
-}
-@media (min-width:56.25em){
-.w1fdzi2f p{font-size:16px;line-height:26px;}
-}
-@media (min-width:75em){
-.w1fdzi2f p{margin-right:0;}
-}
-.w1fdzi2f h2,.w1fdzi2f h3{margin-bottom:0.5rem;}
-.w1fdzi2f p:last-child{margin-bottom:0;}
-@media (min-width:56.25em){
-.clxsel0{width:calc(7 / 12 * 100%);}
-}
-.i76mo33 a{color:inherit;}
-@media (max-width:37.5em){
-.s1cmcu6f:not(:last-child){margin-bottom:2.5rem;}
-}
-.ctkmy3x{border-top:1px solid #cccccc;margin:1.25rem 0;}
-/*! CSS Used from: https://www.ikea.com/ru/ru/stylesheets/main.1436ffa636507017bbc4.css */
-.s1vteuqm{display:flex;flex-wrap:wrap;margin:calc(0.5rem * -1);}
-@media (min-width:37.5em){
-.s1vteuqm{margin:calc(1rem * -1);}
-}
-@media (min-width:56.25em){
-.s1vteuqm{margin:calc(1.25rem * -1);}
-}
-@media (min-width:75em){
-.s1vteuqm{margin:calc(1.25rem * -1);}
-}
-.s1vteuqm > *{flex-grow:0;width:100%;margin:0.5rem;}
-.s1vteuqm > *:empty{display:none;}
-@media (min-width:37.5em){
-.s1vteuqm > *{margin:1rem;}
-}
-@media (min-width:56.25em){
-.s1vteuqm > *{margin:1.25rem;}
-}
-@media (min-width:75em){
-.s1vteuqm > *{margin:1.25rem;}
-}
-.c130l69h > *{flex-basis:calc(100% - 0.5rem * 2);}
-@media (min-width:350px){
-.xsvsjnc > *{flex-basis:calc(100% - 0.5rem * 2);}
-}
-@media (min-width:37.5em){
-.ml4isbd > *{flex-basis:calc(49.9% - 1rem * 2);}
-}
-@media (min-width:56.25em){
-.l1d02xze > *{flex-basis:calc(49.9% - 1.25rem * 2);}
-}
-@media (min-width:75em){
-.xg243a6 > *{flex-basis:calc(49.9% - 1.25rem * 2);}
-}
-.v18by0fb{flex-direction:column;}
-.v1gpv7o0 > *{margin-bottom:calc( 2.5rem + 2.5rem )!important;}
-@media (min-width:37.5em){
-.v1gpv7o0 > *{margin-bottom:calc( 4rem + 2.5rem )!important;}
-}
-.v19w64p3 > *{margin-bottom:2.5rem!important;}
-.vdrm3z7 > *{margin-bottom:2.5rem!important;}
-@media (min-width:37.5em){
-.vdrm3z7 > *{margin-bottom:4rem!important;}
-}
-.vz2frqh > *{margin-bottom:1rem!important;}
-@media (min-width:75em){
-.vz2frqh > *{margin-bottom:2.5rem!important;}
-}
-.g1ci6p1l > *:last-child{margin-bottom:0!important;}
-.s1gshh7t{font-weight:bold;margin:0;word-break:break-word;}
-@media (min-width:56.25em){
-.c1lc5xb3{width:calc(7 / 12 * 100%);}
-}
-.t91kxqv{font-style:normal;font-weight:normal;word-break:break-word;}
-.w1fdzi2f a:hover{color:#111111;}
-.w1fdzi2f p{margin-bottom:2rem;}
-@media (min-width:37.5em){
-.w1fdzi2f p{line-height:24px;}
-}
-@media (min-width:56.25em){
-.w1fdzi2f p{font-size:16px;line-height:26px;}
-}
-@media (min-width:75em){
-.w1fdzi2f p{margin-right:0;}
-}
-.w1fdzi2f h2,.w1fdzi2f h3{margin-bottom:0.5rem;}
-.w1fdzi2f p:last-child{margin-bottom:0;}
-@media (min-width:56.25em){
-.clxsel0{width:calc(7 / 12 * 100%);}
-}
-.i76mo33 a{color:inherit;}
-@media (max-width:37.5em){
-.s1cmcu6f:not(:last-child){margin-bottom:2.5rem;}
-}
-.ctkmy3x{border-top:1px solid #cccccc;margin:1.25rem 0;}
-/*! CSS Used from: https://www.ikea.com/ru/ru/header-footer/styles/main.4f16b2f0232fa4b9348b.css */
-hr{box-sizing:content-box;height:0;overflow:visible;}
-strong{font-weight:700;}
-div,h1,h2,h3,li,ol,p,article,main,nav,section{margin:0;padding:0;}
-article,main,nav,section{display:block;}
-*,*::before,*::after{box-sizing:inherit;outline:none;}
-a{position:relative;}
-a{color:#484848;background-color:transparent;}
-a:hover{color:#111;text-decoration:underline;}
-a:focus,a:active{color:#111;}
-hr{border-right:0;border-left:0;border-bottom:0;border-top:1px solid #ccc;margin-top:1.25rem;margin-bottom:1.25rem;}
-.js-focus-visible :focus:not(.focus-visible){outline:none;}
-/*! CSS Used from: https://www.ikea.com/ru/ru/header-footer/styles/notoLatin.f2d694a5d0a568ae369e.css */
-p:not(:last-of-type){margin-bottom:.625rem;}
-h1{color:#111;font-size:1.5rem;line-height:1.33333;letter-spacing:-.0075rem;font-weight:700;}
-@media (min-width: 37.5em){
-h1{font-size:2.25rem;line-height:1.33333;letter-spacing:-.04rem;}
-}
-h2{color:#111;font-size:1.125rem;line-height:1.44444;font-weight:700;}
-@media (min-width: 37.5em){
-h2{font-size:1.375rem;line-height:1.45455;}
-}
-h3{color:#111;font-size:1rem;line-height:1.5;font-weight:700;}
-/*! CSS Used from: https://www.ikea.com/ru/ru/products/stylesheets/price-package-styles.0d367fa98d79d7e902ca.css */
-.js-focus-visible :focus:not(.focus-visible){outline:none;}
+
+        .modal-form-button {
+            margin-left: calc(50% - 100px);
+            margin-top: 10px;
+
+        }
+        .modal-form-button2 {
+            margin-left: calc(50% - 100px);
+            margin-top: 10px;
+
+        }
+        .modal-form-button3 {
+            margin-left: calc(50% - 100px);
+            margin-top: 10px;
+
+        }
+
+        .modal-form-button > input {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+            padding: 8px;
+            width: 200px;
+        }
+        .modal-form-button > input:hover {
+            background-color: #333;
+        }
+
+
+
+        .modal-form-button2 > input {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+            padding: 8px;
+            width: 200px;
+        }
+        .modal-form-button2 > input:hover {
+            background-color: #333;
+        }
+
+
+        .modal-form-button3 > input {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+            padding: 8px;
+            width: 200px;
+        }
+        .modal-form-button3 > input:hover {
+            background-color: #333;
+        }

@@ -1,0 +1,50 @@
+.raz {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 70%;
+  width: 30%;
+  visibility: hidden;
+  height: 100%;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  min-height: 2em;
+  visibility: visible;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.content-fluids{
+	width: 69.3%;
+}
+.rows{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+	box-sizing: border-box;
+	margin-bottom: 7px;
+}
+.block-two-img{
+	width: 49.5%;
+}
+.block-two-img img.img-col{
+	width: 100%;
+}
+.block-two-text{
+	width: 49.5%;
+}
+.title-two-block, .subtitle-two-block{
+	width: 100%;
+	padding: 24px;
+	padding-left: 0;
+}
+.title-collapse, .subtitle-collapse{
+	padding: 20px;
+	padding-top: 0;
+}
